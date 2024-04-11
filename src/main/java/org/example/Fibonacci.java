@@ -1,10 +1,13 @@
 package org.example;
 
-public class Fibonacci implements FibonacciLike {
+import java.util.ArrayList;
+
+public class Fibonacci implements FibonacciLike,Runnable {
 
     private int amountofNumbersInSequence;
     private int number1;
     private int number2;
+
 
 
     public Fibonacci(int amountofNumbersInSequence, int number1, int number2) {
@@ -28,5 +31,11 @@ public class Fibonacci implements FibonacciLike {
                 throw new RuntimeException(e);
             }
         }
+    }
+
+
+    @Override
+    public void run() {
+      calculate();
     }
 }
